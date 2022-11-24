@@ -27,9 +27,11 @@ public class miaomiaomiao extends Thread {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         miaomiaomiao miao1 = new miaomiaomiao();
         miaomiaomiao miao = new miaomiaomiao();
+        miao.join();
+        miao1.join();
        // miao.run();//run 方法就是mian调用的一个普通的方法 并没有真正的启动线程 就会阻塞 需要执行完毕 才可以执行下面的代码
         miao.start();
         miao1.start();
